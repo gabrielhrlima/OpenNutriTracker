@@ -181,7 +181,7 @@ class _OnboardingSecondPageBodyState extends State<OnboardingSecondPageBody> {
 
   String? validateWeight(String? value) {
     if (value == null) return S.of(context).onboardingWrongWeightLabel;
-    if (value.isEmpty || !RegExp(r'^[0-9]').hasMatch(value)) {
+    if (value.isEmpty || !RegExp(r'^[0-9]+([.,][0-9]+)?$').hasMatch(value)) {
       return S.of(context).onboardingWrongHeightLabel;
     } else {
       return null;
